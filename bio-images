@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anish Manthena - Bio Images</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body class="bio-images-page">
+
+ <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html"> Anish Manthena</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">🏠 Home</a></li>
+          
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">📖 Bio <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="bio-bio.html"> 🧬 Bio</a></li>
+              <li><a href="bio-images.html">️🖼️ Images</a></li>
+              <li><a href="bio-links.html"> 🔗 Important Links</a></li>
+            </ul>
+          </li>
+
+          <li><a href="projects.html"> 🧑‍💻 Projects</a></li>
+          <li class="active"><a href="rate.html">⭐Rate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpl0pHwaTS0q5u1rUuEe2yATp8xjwvnN8i1qAujdcDSA&amp;s=10" alt="Basketball" height="200" width="200" class="biopicture">
+    <p class=" img">A basketball is an important image because I like playing and watching basketball.</p>
+    
+    <img src="https://codehs.com/uploads/85ffd4a5464d340c89e5a371ca7c2fb9" alt="City" height="200" width="200" class="biopicture">
+    <p class=" img"> A computer is important because I do all my work on the computer and have important stuff on there.</p>
+    <img src="https://codehs.com/uploads/0ff9c9b4eaeda2d5e2ad3fafb959d36f" alt="Computer" class="biopicture">
+    <p class=" img">The image of a computer is important because I do all of my work on a computer.</p>
+  </div>
+
+  <div class="container gallery-container">
+    <h3 class="text-center" style="color: white; margin-bottom: 20px;">🖼️ Image Gallery</h3>
+    
+    <div id="imageGallery" class="carousel slide" data-ride="carousel" data-interval="3000">
+      
+      <ol class="carousel-indicators">
+        <li data-target="#imageGallery" data-slide-to="0" class="active"></li>
+        <li data-target="#imageGallery" data-slide-to="1"></li>
+        <li data-target="#imageGallery" data-slide-to="2"></li>
+        <li data-target="#imageGallery" data-slide-to="3"></li>
+        <li data-target="#imageGallery" data-slide-to="4"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="https://codehs.com/uploads/58a1991e1d866d929a5943551a94225b" alt="Spotify">
+          <div class="carousel-caption">
+            <h3>Spotify</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://codehs.com/uploads/db40103a2e41e2bd015325c164f70a68" alt="Kobe Bryant">
+          <div class="carousel-caption">
+            <h3>Kobe Bryant</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://codehs.com/uploads/5ffb898adab0eec3e5f71e07c3859aa7" alt="F1 Car">
+          <div class="carousel-caption">
+            <h3>F1 Racing</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png" alt="Granada High School Logo" class="fit-contain">
+          <div class="carousel-caption">
+            <h3>Granada High School</h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="https://codehs.com/uploads/e351a136eac1dccfbf7bdc1f99e9c704" alt="Pencil">
+          <div class="carousel-caption">
+            <h3>Pencil</h3>
+          </div>
+        </div>
+      </div>
+
+      <a class="left carousel-control" href="#imageGallery" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#imageGallery" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://granadahigh.livermoreschools.org/">
+      <img src="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png" alt="Granada Distance Program" height="100" width="100">
+    </a>
+    
+    <a href="mailto:anishmanthena03@gmail.com"> 
+      <h4 class="Links">✉️ Click to send a Message to Anish</h4>
+    </a>
+    <p class="foot"> Created by: Anish Manthena 2026</p>
+  </footer>
+
+</body>
+</html>
