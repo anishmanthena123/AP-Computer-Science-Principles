@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anish Manthena - Rate My Website</title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  
+</head>
+<body class="rate-page">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html"> Anish Manthena</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">🏠 Home</a></li>
+          
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">📖 Bio <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="bio-bio.html"> 🧬 Bio</a></li>
+              <li><a href="bio-images.html">️🖼️ Images</a></li>
+              <li><a href="bio-links.html"> 🔗 Important Links</a></li>
+            </ul>
+          </li>
+
+          <li><a href="projects.html"> 🧑‍💻 Projects</a></li>
+          <li class="active"><a href="rate.html">⭐Rate<a/li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center">
+    <div class="rating-card">
+      <h2>Rate My Website</h2>
+      <p style="opacity: 0.9;">Let me know what you think of my portfolio!</p>
+
+      <form id="ratingForm">
+        <div class="rating-group">
+          <input type="radio" id="star5" name="rating" value="5">
+          <label for="star5" title="5 Stars">★</label>
+
+          <input type="radio" id="star4" name="rating" value="4">
+          <label for="star4" title="4 Stars">★</label>
+
+          <input type="radio" id="star3" name="rating" value="3">
+          <label for="star3" title="3 Stars">★</label>
+
+          <input type="radio" id="star2" name="rating" value="2">
+          <label for="star2" title="2 Stars">★</label>
+
+          <input type="radio" id="star1" name="rating" value="1">
+          <label for="star1" title="1 Star">★</label>
+        </div>
+
+        <div>
+          <input type="text" class="form-control-custom" placeholder="Your Name (Optional)" id="userName">
+          <textarea class="form-control-custom" rows="4" placeholder="Leave any feedback or suggestions..." id="userFeedback"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Rating</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <a href="https://granadahigh.livermoreschools.org/" target="_blank" rel="noopener noreferrer">
+      <img src="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png" alt="Granada High School Logo" height="100" width="100">
+    </a>
+    
+    <a href="mailto:anishmanthena03@gmail.com"> 
+      <h4 class="Links">✉️ Click to send a Message to Anish</h4>
+    </a>
+  </footer>
+
+  <script>
+    document.getElementById('ratingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thanks for leaving a review, hope it was good');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
