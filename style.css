@@ -1,0 +1,361 @@
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: lightblue;
+  margin: 0;
+  padding: 0;
+  transition: background 0.5s ease;
+}
+
+body.home-page {
+  min-height: 100vh;
+  background-image: linear-gradient(#cb2d3e, #ef473a);
+  background-attachment: fixed;
+}
+
+body.bio-images-page {
+  min-height: 100vh;
+  background-image: linear-gradient(#2193b0, #6dd5ed);
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+body.rate-page {
+  min-height: 100vh;
+  background-color: #9b59b6;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.text, .project, .des, .projectlabels, .foot, .img {
+  font-style: italic;
+}
+
+#name {
+  color: blue;
+  font-style: italic;
+}
+
+.title {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+  margin: 30px 0;
+}
+
+.textbordor {
+  border: 2px solid #333333;
+  padding: 10px;
+  display: inline-block;
+}
+
+.Links {
+  color: black;
+  font-style: italic;
+}
+
+/* Navbar Link Hover Effects */
+.navbar-inverse .navbar-nav > li > a,
+.navbar-inverse .navbar-brand {
+  transition: all 0.3s;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus,
+.navbar-inverse .navbar-brand:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2) !important; 
+  border-radius: 4px;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #ef473a !important;
+  color: #ffffff !important;
+}
+
+
+.parallax {
+  background-image: url("https://codehs.com/uploads/6ea4247c8f93c9916815d4e9c5afef50");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+    min-height: 250px;
+  }
+}
+
+
+.biopicture {
+  max-width: 150px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;  
+  border-radius: 4px;      
+  padding: 5px; 
+}
+
+.link-card {
+  margin-bottom: 20px;
+}
+
+.link-card img {
+  max-width: 150px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border: 2px solid black;  
+  border-radius: 4px;      
+  padding: 5px;            
+}
+
+.gallery-container {
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.carousel-inner {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background-color: #000000;
+}
+
+.carousel-inner .item {
+  height: 400px;
+}
+
+.carousel-inner .item img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-inner .item img.fit-contain {
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 10px 15px;
+  bottom: 20px;
+}
+
+
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.project-header {
+  position: fixed;
+  top: 50px;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.project-container {
+  padding-top: 140px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.project-img {
+  width: 350px;
+  max-width: 100%; 
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 767px) {
+  .project-header {
+    flex-wrap: wrap;  
+    padding: 5px;
+  }
+  
+  .project-container {
+    flex-direction: column !important; 
+    justify-content: center !important; 
+    text-align: center;
+    padding-top: 180px; 
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .project-img {
+    width: 85%; 
+  }
+}
+
+.rating-card {
+  background: transparent;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 600px;
+  border: none;
+  box-shadow: none;
+}
+
+.rating-group {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.rating-group input {
+  display: none;
+}
+
+.rating-group label {
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  margin: 0 4px;
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.rating-group label:hover,
+.rating-group label:hover ~ label,
+.rating-group input:checked ~ label {
+  color: #ffca28;
+  transform: scale(1.15);
+}
+
+.form-control-custom {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.form-control-custom::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control-custom:focus {
+  border-color: #ffca28;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-submit {
+  background-color: #ffca28;
+  color: #000000;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px 30px;
+  border: 2px solid #000000;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+.btn {
+  padding: 1.1em 2em;
+  background: none;
+  border: 2px solid #fff;
+  font-size: 15px;
+  color: #131313;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background-color: #ecd448;
+  font-weight: bolder;
+  box-shadow: 0 2px 0 2px #000;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 120%;
+  background-color: #ff6700;
+  top: 50%;
+  transform: skewX(30deg) translate(-150%, -50%);
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  background-color: #4cc9f0;
+  color: #fff;
+  box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.btn:hover::before {
+  transform: skewX(30deg) translate(150%, -50%);
+  transition-delay: 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn-container {
+  margin: 25px 0;
+}
+
+
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  clear: both;
+}
+
+footer.rate-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0 20px 0;
+  gap: 10px;
+}
+
+footer.rate-footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer.rate-footer a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
