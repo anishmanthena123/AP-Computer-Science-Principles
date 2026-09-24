@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anish Manthena - Bio Links</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html"> Anish Manthena</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">🏠 Home</a></li>
+          
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">📖 Bio <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="bio-bio.html"> 🧬 Bio</a></li>
+              <li><a href="bio-images.html">️🖼️ Images</a></li>
+              <li><a href="bio-links.html"> 🔗 Important Links</a></li>
+            </ul>
+          </li>
+
+          <li><a href="projects.html"> 🧑‍💻 Projects</a></li>
+          <li class="active"><a href="rate.html">⭐Rate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center">
+    <h1>Important Links</h1>
+    <p class="textbordor">Click on the image or the description under to go to the website</p>
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="col-sm-4 link-card">
+        <a href="https://www.youtube.com" target="_blank">
+          <img src="https://codehs.com/uploads/3845a1fa58b6a5b1841ef959e649d58d" alt="YouTube logo">
+          <p>YouTube</p>
+        </a>
+      </div>
+
+      <div class="col-sm-4 link-card">
+        <a href="https://www.espn.com" target="_blank">
+          <img src="https://codehs.com/uploads/ec054a91ad11c931e99b0701a897c753" alt="ESPN logo">
+          <p>ESPN</p>
+        </a>
+      </div>
+
+      <div class="col-sm-4 link-card">
+        <a href="https://www.khanacademy.org" target="_blank">
+          <img src="https://cdn.kastatic.org/images/khan-logo-dark-background.png" alt="Khan Academy logo">
+          <p>Khan Academy</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+ <footer>
+    <a href="https://granadahigh.livermoreschools.org/">
+      <img src="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png" alt="Granada Distance Program" height="100" width="100">
+    </a>
+    
+    <a href="mailto:anishmanthena03@gmail.com"> 
+      <h4 class="Links">✉️ Click to send a Message to Anish</h4>
+    </a>
+    <p class=foot> Created by: Anish Manthena 2026</p>
+  </footer>
+
+</body>
+</html>
