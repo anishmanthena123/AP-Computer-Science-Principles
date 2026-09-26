@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anish Manthena - Bio</title>
+  <link rel="icon" type="image/png"
+      href="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html"> Anish Manthena</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">🏠 Home</a></li>
+          
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">📖 Bio <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="bio-bio.html"> 🧬 Bio</a></li>
+              <li><a href="bio-images.html">️🖼️ Images</a></li>
+              <li><a href="bio-links.html"> 🔗 Important Links</a></li>
+            </ul>
+          </li>
+
+          <li><a href="projects.html"> 🧑‍💻 Projects</a></li>
+          <li class="active"><a href="rate.html">⭐Rate</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="text">Anish Manthena</h1>
+    <img src="https://codehs.com/uploads/15375ed8efd4d84f19916ab46c87cabe" alt="Anish Manthena Profile Picture" class="img-responsive img-rounded">
+    
+    <p class="text1" style="margin-top: 15px;" >
+      Hello, I am a high school student from Granada High and I spend every day trying to challenge myself. I love coding and playing basketball. I hope to master how to code and improve my critical thinking skills while also having a fun time. I hope to have a career in engineering later down the line and go to a UC.
+    </p>
+  </div>
+
+</body>
+
+<footer>
+    <a href="https://granadahigh.livermoreschools.org/">
+      <img src="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png" alt="Granada Distance Program" height="100" width="100">
+    </a>
+    
+    <a href="mailto:anishmanthena03@gmail.com"> 
+      <h4 class="Links">✉️ Click to send a Message to Anish</h4>
+    </a>
+    <p class=foot> Created by: Anish Manthena 2026</p>
+  </footer>
+</html>
