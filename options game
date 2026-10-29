@@ -1,0 +1,269 @@
+import time
+import random
+
+
+class fg:
+    BLACK   = '\033[30m'
+    RED     = '\033[31m'
+    GREEN   = '\033[32m'
+    YELLOW  = '\033[33m'
+    BLUE    = '\033[34m'
+    MAGENTA = '\033[35m'
+    CYAN    = '\033[36m'
+    WHITE   = '\033[37m'
+    RESET   = '\033[39m'
+
+class bg:
+    BLACK   = '\033[40m'
+    RED     = '\033[41m'
+    GREEN   = '\033[42m'
+    YELLOW  = '\033[43m'
+    BLUE    = '\033[44m'
+    MAGENTA = '\033[45m'
+    CYAN    = '\033[46m'
+    WHITE   = '\033[47m'
+    RESET   = '\033[49m'
+
+class style:
+    BRIGHT    = '\033[1m'
+    DIM       = '\033[2m'
+    NORMAL    = '\033[22m'
+    RESET_ALL = '\033[0m'
+
+
+def masterFunction(question, option1, option2, resp1, resp2, color1, color2):
+    answer = input(fg.BLACK + question + " " + color1 + option1 + fg.BLACK + " or " + color2 + option2 + fg.BLACK + "? " + fg.RESET)
+
+    if answer.lower() == option1.lower():
+        print(fg.GREEN + resp1 + fg.RESET)
+        return option1
+
+    elif answer.lower() == option2.lower():
+        print(fg.BLUE + resp2 + fg.RESET)
+        return option2
+
+    else:
+        print(fg.RED + "oops, invalid input" + fg.RESET)
+        return masterFunction(question, option1, option2, resp1, resp2, color1, color2)
+
+
+print()
+print(fg.MAGENTA + "*******************************")
+print(fg.CYAN + "SHOE SHOPPING ADVENTURE")
+print(fg.BLUE + "*******************************" + fg.RESET)
+
+name = input(fg.GREEN + "What is your name? " + fg.RESET)
+
+print(fg.MAGENTA + "Welcome " + name + "!")
+print(fg.BLUE + "You need some new shoes.")
+print(fg.GREEN + "You decide to go to the mall.")
+print(fg.CYAN + "Lets start!" + fg.RESET)
+print()
+
+
+q1 = masterFunction(
+    "How do you want to get to the mall?",
+    "drive", "walk",
+    "You drive to the mall.",
+    "You walk to the mall.",
+    fg.RED, fg.BLUE
+)
+
+
+q2 = masterFunction(
+    "Where do you want to go first?",
+    "shoe store", "food court",
+    "You go to the shoe store.",
+    "You get some food first.",
+    fg.GREEN, fg.MAGENTA
+)
+
+
+q3 = masterFunction(
+    "What type of shoes do you want?",
+    "sneakers", "casual",
+    "You look at sneakers.",
+    "You look at casual shoes.",
+    fg.CYAN, fg.RED
+)
+
+
+q4 = masterFunction(
+    "What brand do you want?",
+    "Nike", "Adidas",
+    "You look at Nike.",
+    "You look at Adidas.",
+    fg.BLUE, fg.GREEN
+)
+
+
+q5 = masterFunction(
+    "What color do you want?",
+    "black", "white",
+    "You choose black.",
+    "You choose white.",
+    fg.MAGENTA, fg.CYAN
+)
+
+
+q6 = masterFunction(
+    "What style do you want?",
+    "high top", "low top",
+    "You choose high tops.",
+    "You choose low tops.",
+    fg.RED, fg.GREEN
+)
+
+
+q7 = masterFunction(
+    "What do you want to do?",
+    "try them", "keep looking",
+    "You try the shoes on.",
+    "You keep looking around.",
+    fg.BLUE, fg.MAGENTA
+)
+
+
+q8 = masterFunction(
+    "What size do you want?",
+    "your size", "size up",
+    "You get your normal size.",
+    "You get one size bigger.",
+    fg.CYAN, fg.GREEN
+)
+
+
+q9 = masterFunction(
+    "What do you do with the laces?",
+    "tie them", "leave loose",
+    "You tie the laces.",
+    "You leave them loose.",
+    fg.MAGENTA, fg.RED
+)
+
+
+q10 = masterFunction(
+    "How do you test the shoes?",
+    "walk", "jump",
+    "You walk around.",
+    "You jump around.",
+    fg.GREEN, fg.BLUE
+)
+
+
+q11 = masterFunction(
+    "How do the shoes feel?",
+    "comfortable", "uncomfortable",
+    "They feel really good.",
+    "They dont feel very good.",
+    fg.RED, fg.CYAN
+)
+
+
+q12 = masterFunction(
+    "What do you want to do?",
+    "mirror", "sit down",
+    "You look at them in the mirror.",
+    "You sit down and look at them.",
+    fg.MAGENTA, fg.GREEN
+)
+
+
+q13 = masterFunction(
+    "Do you like this pair?",
+    "keep", "different pair",
+    "You keep the pair.",
+    "You look for another pair.",
+    fg.BLUE, fg.RED
+)
+
+
+q14 = masterFunction(
+    "What other brand do you look at?",
+    "Vans", "Converse",
+    "You look at Vans.",
+    "You look at Converse.",
+    fg.CYAN, fg.MAGENTA
+)
+
+
+q15 = masterFunction(
+    "What color looks better?",
+    "red", "blue",
+    "You like the red ones.",
+    "You like the blue ones.",
+    fg.GREEN, fg.CYAN
+)
+
+
+q16 = masterFunction(
+    "What kind do you want?",
+    "laces", "slip on",
+    "You choose shoes with laces.",
+    "You choose slip on shoes.",
+    fg.RED, fg.MAGENTA
+)
+
+
+q17 = masterFunction(
+    "Who should choose?",
+    "ask friend", "yourself",
+    "You ask your friend.",
+    "You choose by yourself.",
+    fg.BLUE, fg.CYAN
+)
+
+
+q18 = masterFunction(
+    "What do you want to do?",
+    "buy", "keep shopping",
+    "You think you found your shoes.",
+    "You keep shopping.",
+    fg.MAGENTA, fg.GREEN
+)
+
+
+q19 = masterFunction(
+    "Where do you go next?",
+    "checkout", "look again",
+    "You go to checkout.",
+    "You look around one more time.",
+    fg.CYAN, fg.RED
+)
+
+
+q20 = masterFunction(
+    "What is your final choice?",
+    "get shoes", "leave",
+    "You get the shoes!",
+    "You leave without shoes.",
+    fg.GREEN, fg.BLUE
+)
+
+
+print()
+print(fg.MAGENTA + "*******************************")
+
+if q20 == "get shoes":
+    number = random.randint(1, 3)
+
+    if number == 1:
+        print(fg.GREEN + "YOU GOT NEW SHOES!")
+        print(fg.CYAN + name + " leaves the mall happy!")
+
+    elif number == 2:
+        print(fg.BLUE + "YOU GOT NEW SHOES!")
+        print(fg.MAGENTA + "You also get some free socks!")
+
+    else:
+        print(fg.MAGENTA + "YOU FOUND THE PERFECT SHOES!")
+        print(fg.GREEN + name + " leaves the mall happy!")
+
+else:
+    print(fg.BLUE + "NO NEW SHOES TODAY!")
+    print(fg.MAGENTA + name + " goes home.")
+
+
+print()
+print(fg.CYAN + "Thanks for playing " + fg.GREEN + name + fg.CYAN + "!")
+print(fg.BLUE + "*******************************" + fg.RESET)
