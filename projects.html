@@ -1,94 +1,340 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anish Manthena - Projects</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-</head>
-<body>
+import time
 
- <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-        <a class="navbar-brand" href="index.html"> Anish Manthena</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="index.html">🏠 Home</a></li>
-          
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">📖 Bio <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="bio-bio.html"> 🧬 Bio</a></li>
-              <li><a href="bio-images.html">️🖼️ Images</a></li>
-              <li><a href="bio-links.html"> 🔗 Important Links</a></li>
-            </ul>
-          </li>
+class fg:
+    BLACK = '\033[30m'
+    RED = '\033[31m'
+    GREEN = '\033[32m'
+    YELLOW = '\033[33m'
+    BLUE = '\033[34m'
+    MAGENTA = '\033[35m'
+    CYAN = '\033[36m'
+    WHITE = '\033[37m'
+    RESET = '\033[39m'
 
-          <li><a href="projects.html"> 🧑‍💻 Projects</a></li>
-          <li class="active"><a href="rate.html">⭐Rate</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+class bg:
+    BLACK = '\033[40m'
+    RED = '\033[41m'
+    GREEN = '\033[42m'
+    YELLOW = '\033[43m'
+    BLUE = '\033[44m'
+    MAGENTA = '\033[45m'
+    CYAN = '\033[46m'
+    WHITE = '\033[47m'
+    RESET = '\033[49m'
 
-  <header>
-    <a href="#project1" class="btn btn-default">Project 1</a>
-    <a href="#project2" class="btn btn-default">Project 2</a>
-    <a href="#project3" class="btn btn-default">Project 3</a>
-    <a href="#project4" class="btn btn-default">Project 4</a>
-    <a href="#project5" class="btn btn-default">Project 5</a>
-  </header>
+class style:
+    BRIGHT = '\033[1m'
+    DIM = '\033[2m'
+    NORMAL = '\033[22m'
+    RESET_ALL = '\033[0m'
 
-  <div id="project1" class="project-container" style="justify-content: flex-end;">
-    <div class="projectlabels">
-      <h2>Shoe Shopping Adventure</h2>
-      <p>My Python choices game with 20 questions. Pick between two options at each step of a trip to the mall and see how your shopping adventure ends!</p>
-      <p>The game uses Python functions, if/else statements, random numbers, and colorful text.</p>
-      <a class="btn btn-primary" href="https://github.com/anishmanthena123/AP-Computer-Science-Principles/blob/main/options%20game" target="_blank" rel="noopener noreferrer">View Python Game Code</a>
-    </div>
-    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDACEXGR0ZFSEdGx0lIyEoMlM2Mi4uMmZJTTxTeWp/fXdqdHKFlr+ihY21kHJ0puOotcbM1tjWgaDr/OnQ+r/S1s7/2wBDASMlJTIsMmI2NmLOiXSJzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7/wAARCACMAIwDASIAAhEBAxEB/8QAGgAAAgMBAQAAAAAAAAAAAAAAAQIABAUDBv/EADIQAAICAQMDAgQEBQUAAAAAAAECABEDBBIhBTFBE1EiYXGBFDJCwSMkM6HRQ3KR4fD/xAAXAQEBAQEAAAAAAAAAAAAAAAAAAQID/8QAHREBAQEAAgMBAQAAAAAAAAAAAAERAiESMUFRYf/aAAwDAQACEQMRAD8AAjiACOBK5ABDGAhqAoENRqhqAtQ1GqGoCVJUepKgJUlR6kqAlSVHqSoHOoKnSoKgcyIKnQiCpRzUToBAonQCQACGowENQFqGoexA8mPtPtC5XJ3TGAXYKCaF+8c0BZNCV8ukyas5Eb4cZIpv3Ez61eXL+Dy5OENszDsB5PuJJdavBsCj2kqVMOU4wisNqnkZAvLKOLYd/vLgdGUMHUg9jcrNmBUlR6kqEJUlRqkqAtQVHqCoHMiCp0Ii1AUCMBGCxgsLhQIHZcaF2NATpUR9KuXIrZCSq/pviRrjx29qy038zkxsVqgtXx7/AGnbT5cmUNeVMmPwyij9xBqfQD71yMmUcblN19ROoxnENwIcNySormZs/XfZmQ2EOi7CQVHYxiqFmBoM4o/OJuZbJ4HzlZ9UQUA7tkCi/pzEmTphNfpsxwN+H5Zv6nuw8D6fKZY0WrPBx0PmwnocbEmuWA/VCVHgxx5anKKGmA0enH4nOOT+o8D6To+u06Lu9QN/t5nLqWmyOfUx/HQop/iYmVthBVApmtZ8dbuTXbNwXT5mZV3EEVQ95Vfq7qtnTVY4JPE56DNmdsxyA5N2PYSWqh4ja1GXpWEMQWxHaaN2p/8ACU8cc8XVs51CB1UoxoqB2m2RPMafL6OdHoNtN8zcXqGF1/Ocd+Sh4hMWiItR0ON0Bw5N6+93DUiYG2GoRGhpycMCCq7vlKeo6jjRziL+mQLJFE/QfOdOovqgqJpV/OaLjusqY9J+CwtqM6NmcWCgplIPk8Ri70GDRu2XLqHL6bkZFJIdCP3mrp9Rh1Ss2FtwvkeZmvmzZFTVaF9yYxTYK/L9vacRR/nennay/wBTD7f9So2Wwo36iJV1yYtLg9dR/FQbUJPYnzUfS6savGMiHaBwy+xlLWO2vy+njo408k8QtVdD1LKuqUZMhONjRBnod8xk6Ymz/T3eOTH0WPDmZsWZW9QXyDwZm/w42fVzV5RsIXl/FTD1dZsivfIFH5zVz6ZMAJxKQfe5UwY0GMkp6juSAn+Ym/Wuvivo9SNPn3EEqRTAeZZ1upTPjxnHjdSp7k/2lTVYDp3FspY80p7RsXpsrb2INWv1+crfHKUpjfwL+XBhYOmKlO4f3nIo5YemNx9gJodP0uXMQcilUB5vuZGLFvo+nOLSb275Dur5S9UbsKHaCVgokBuSrFTkMWVT8Dgj2YQR3oe0NzkFzeWT7A/5jDGf1OfsKjWmdqtE+DMNToDta/iTxO+LRKNR+Jr03I5VT8N+ZcCgdhz7nmQmhCK+ZRjwOuMUdpoCYmn1T4HLKAT2+IXNnMznjHW89rmCwKu6lqINXES+mgvUsxNigfeomgJfqeNmBBNk/wDBnBAu2yxuuBOvTyB1DDTE9+/0lZl7bWXHvUzKI9LO6l/TVhy3kfSbUyur4TtGQDjsZluKOoz6cYmxYcN3yXbvK+Nq4/eIbHfkQg+0rcueljG7YsqZBwVNz0WN1yY1dDasLE80ASB5mj0jMVytgY8EWB84Tl321jBCYIYKIYBCJAYYIYEisOI0h7QKOZWawH2Dy3sJilf4rqlMAaBPmXerPyF8TPQgGyLmol9LSWuMgAVfaHC4TV4WyEEBuaE5BweNnH1kyEAqRX2hmPTxXQOpVhYMTT5PVwI/uJ0kbYOt6e+nJZAXxfLuJR2A8qZ6w895S1HTNPmO6ije6wusJRkXsZb0OPI+rRrsg2a8CW16QoPOZyJew4EwptQVIuupgkMErICGKI0gMMEkAyHtJJAxOpreT7TMHfmbfVMfw7vaYpO00RYliV1Q1I8COo8X9Yyne4CjvKjf6eNuixA+37yzExJ6eJE9hUeRpJIJIEkkgkEghiygCGKDDIGhiyQGhiwwEzYhlQgzFz6DIjn4Cy+Km7JCvPLpGJoYXmlotAMZDuo3DsJfqGBIYJIEkkghEkkklAMEhggIDCDEEaQNcNxYYDQ3FhEBpIJIUZJJIEkkkgSSSCBJJIIRDFhMWB//2Q==" alt="Adidas sneakers for Shoe Shopping Adventure" class="project-img" style="width: 360px; max-width: 90%; height: auto; object-fit: contain; border-radius: 12px;">
-  </div>
 
-  <div id="project2" class="project-container" style="justify-content: flex-start;">
-    <p class="projectlabels">Project 2 is coming soon</p>
-    <img src="https://codehs.com/uploads/0d24c4acb3ffa0f71ef4019283e33aa3" alt="Soon" class="project-img">
-  </div>
+def color(a, b, text):
+    return a + b + text + fg.RESET + bg.RESET
 
-  <div id="project3" class="project-container" style="justify-content: flex-end;">
-    <p class="projectlabels">Project 3 is coming soon</p>
-    <img src="https://codehs.com/uploads/0d24c4acb3ffa0f71ef4019283e33aa3" alt="Soon" class="project-img">
-  </div>
 
-  <div id="project4" class="project-container" style="justify-content: flex-start;">
-    <p class="projectlabels">Project 4 is coming soon</p>
-    <img src="https://codehs.com/uploads/0d24c4acb3ffa0f71ef4019283e33aa3" alt="Soon" class="project-img">
-  </div>
+def placeLines(num):
+    for i in range(num):
+        print("*******************************")
 
-  <div id="project5" class="project-container" style="justify-content: flex-end;">
-    <p class="projectlabels">Project 5 is coming soon</p>
-    <img src="https://codehs.com/uploads/0d24c4acb3ffa0f71ef4019283e33aa3" alt="Soon" class="project-img">
-  </div>
 
-</body>
-<footer>
-    <a href="https://granadahigh.livermoreschools.org/">
-      <img src="https://granadaxc.com/wp-content/uploads/2021/07/g-favicon.png" alt="Granada Distance Program" height="100" width="100">
-    </a>
-    
-    <a href="mailto:anishmanthena03@gmail.com"> 
-      <h4 class="Links">✉️ Click to send a Message to Anish</h4>
-    </a>
-    <p class=foot> Created by: Anish Manthena 2026</p>
-  </footer>
-</html>
+def showMessage(text):
+    print()
+    print(text)
+    time.sleep(1)
+
+
+def showChoices(a, b, c, d):
+    print(color(c, bg.BLACK, a) + " or " + color(d, bg.BLACK, b))
+
+
+def askForName():
+    global name
+    name = input("What is your name? ").strip()
+
+    print()
+    print(color(fg.CYAN, bg.BLACK, "ROAD TRIP ADVENTURE"))
+    print("Welcome " + name + "!")
+    print("You and your friends are going on a road trip!")
+    placeLines(1)
+    time.sleep(1)
+
+
+def startTrip():
+    print("\nYou are getting ready for your road trip.")
+    print("Do you want a sports car or an SUV?")
+    showChoices("sports car", "SUV", fg.RED, fg.BLUE)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "SPORTS CAR":
+        sportsCar()
+
+    elif choice == "SUV":
+        suv()
+
+    else:
+        print("Invalid choice")
+        startTrip()
+
+
+def sportsCar():
+    showMessage("You choose a sports car!")
+    chooseDriver()
+
+
+def suv():
+    showMessage("You choose a big SUV!")
+    chooseDriver()
+
+
+def chooseDriver():
+    print("\nWho should drive?")
+    showChoices("yourself", "friend", fg.GREEN, fg.BLUE)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "YOURSELF":
+        print("You decide to drive!")
+        chooseDestination()
+
+    elif choice == "FRIEND":
+        print("Your friend starts driving!")
+        chooseDestination()
+
+    else:
+        print("Invalid choice")
+        chooseDriver()
+
+
+def chooseDestination():
+    print("\nWhere do you want to go?")
+    showChoices("beach", "mountains", fg.CYAN, fg.GREEN)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "BEACH":
+        beach()
+
+    elif choice == "MOUNTAINS":
+        mountains()
+
+    else:
+        print("Invalid choice")
+        chooseDestination()
+
+
+def beach():
+    showMessage("You decide to go to the beach!")
+    chooseMusic()
+
+
+def mountains():
+    showMessage("You decide to go to the mountains!")
+    chooseMusic()
+
+
+def chooseMusic():
+    print("\nWhat music do you want?")
+    showChoices("rap", "pop", fg.RED, fg.MAGENTA)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "RAP":
+        print("You blast rap music!")
+        foodStop()
+
+    elif choice == "POP":
+        print("You play pop music!")
+        foodStop()
+
+    else:
+        print("Invalid choice")
+        chooseMusic()
+
+
+def foodStop():
+    print("\nYou start getting hungry!")
+    print("Where do you want to eat?")
+    showChoices("McDonalds", "Taco Bell", fg.YELLOW, fg.RED)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "MCDONALDS":
+        print("You get burgers and fries!")
+        chooseDrink()
+
+    elif choice == "TACO BELL":
+        print("You get tacos!")
+        chooseDrink()
+
+    else:
+        print("Invalid choice")
+        foodStop()
+
+
+def chooseDrink():
+    print("\nWhat do you want to drink?")
+    showChoices("water", "soda", fg.CYAN, fg.RED)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "WATER":
+        print("You get some water.")
+        chooseRoad()
+
+    elif choice == "SODA":
+        print("You get a soda.")
+        chooseRoad()
+
+    else:
+        print("Invalid choice")
+        chooseDrink()
+
+
+def chooseRoad():
+    print("\nWhich road do you want to take?")
+    showChoices("highway", "backroad", fg.GREEN, fg.BLUE)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "HIGHWAY":
+        highway()
+
+    elif choice == "BACKROAD":
+        backroad()
+
+    else:
+        print("Invalid choice")
+        chooseRoad()
+
+
+def highway():
+    showMessage("You take the highway!")
+    print("There is a lot of traffic.")
+    gasStation()
+
+
+def backroad():
+    showMessage("You take the backroad!")
+    print("You see some cool views.")
+    gasStation()
+
+
+def gasStation():
+    print("\nYour car is running low on gas!")
+    print("Do you want to stop or continue?")
+    showChoices("stop", "continue", fg.GREEN, fg.RED)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "STOP":
+        print("You stop and fill up your tank.")
+        hotelStop()
+
+    elif choice == "CONTINUE":
+        print("You keep driving but stop for gas later.")
+        hotelStop()
+
+    else:
+        print("Invalid choice")
+        gasStation()
+
+
+def hotelStop():
+    print("\nIt is getting late!")
+    print("Where do you want to sleep?")
+    showChoices("hotel", "car", fg.BLUE, fg.MAGENTA)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "HOTEL":
+        print("You sleep in a hotel.")
+        breakfast()
+
+    elif choice == "CAR":
+        print("You sleep in the car.")
+        breakfast()
+
+    else:
+        print("Invalid choice")
+        hotelStop()
+
+
+def breakfast():
+    print("\nThe next morning you wake up hungry.")
+    print("What do you want for breakfast?")
+    showChoices("pancakes", "eggs", fg.YELLOW, fg.GREEN)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "PANCAKES":
+        print("You eat pancakes!")
+        souvenirShop()
+
+    elif choice == "EGGS":
+        print("You eat eggs!")
+        souvenirShop()
+
+    else:
+        print("Invalid choice")
+        breakfast()
+
+
+def souvenirShop():
+    print("\nYou see a souvenir shop!")
+    print("What do you want to buy?")
+    showChoices("shirt", "keychain", fg.MAGENTA, fg.CYAN)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "SHIRT":
+        print("You buy a shirt!")
+        finalStop()
+
+    elif choice == "KEYCHAIN":
+        print("You buy a keychain!")
+        finalStop()
+
+    else:
+        print("Invalid choice")
+        souvenirShop()
+
+
+def finalStop():
+    print("\nYou are almost at your destination!")
+    print("Do you want to take pictures or continue?")
+    showChoices("pictures", "continue", fg.BLUE, fg.GREEN)
+
+    choice = input("Enter your choice: ").strip().upper()
+
+    if choice == "PICTURES":
+        print("You take pictures with your friends!")
+        ending()
+
+    elif choice == "CONTINUE":
+        print("You keep driving!")
+        ending()
+
+    else:
+        print("Invalid choice")
+        finalStop()
+
+
+def ending():
+    print()
+    placeLines(1)
+    print(color(fg.GREEN, bg.BLACK, "ROAD TRIP SUCCESS!"))
+    print(name + ", you made it to your destination!")
+    print("You and your friends had an amazing road trip!")
+    print(color(fg.CYAN, bg.BLACK, "Thanks for playing!"))
+    placeLines(1)
+
+
+def main():
+    askForName()
+    startTrip()
+
+
+main()
