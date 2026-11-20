@@ -84,6 +84,32 @@
 
     <p class="foot">Created by: Anish Manthena 2026</p>
   </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
+    const navItems = document.querySelectorAll(".navbar-nav li");
+
+    navItems.forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+    const links = document.querySelectorAll(".navbar-nav a");
+
+    links.forEach(function(link) {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            link.parentElement.classList.add("active");
+
+            const dropdown = link.closest(".dropdown");
+
+            if (dropdown) {
+                dropdown.classList.add("active");
+            }
+        }
+    });
+});
+</script>
 </body>
 </html>
