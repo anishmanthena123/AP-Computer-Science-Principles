@@ -366,3 +366,25 @@ footer.rate-footer a:hover {
   border: 2px solid white;
   border-radius: 5px; 
 } 
+
+/* Navbar active page highlighting */
+.navbar-inverse .navbar-nav > li.active > a,
+.navbar-inverse .navbar-nav > li.active > a:hover,
+.navbar-inverse .navbar-nav > li.active > a:focus {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 5px !important;
+    margin: 7px 4px !important;
+    padding: 8px 12px !important;
+}
+
+/* Prevent inactive navbar links from being highlighted */
+.navbar-inverse .navbar-nav > li:not(.active) > a {
+    background-color: transparent !important;
+}
+
+/* Highlight the selected Bio dropdown item */
+.navbar-inverse .dropdown-menu > li.active > a {
+    background-color: #eeeeee !important;
+    color: black !important;
+} 
